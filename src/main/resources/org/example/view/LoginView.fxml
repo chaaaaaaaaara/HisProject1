@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!-- 绑定控制器类 org.example.controller.LoginViewController -->
+<GridPane alignment="center" hgap="10" vgap="10"
+          xmlns="http://javafx.com/javafx/17"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="org.example.controller.LoginViewController">
+
+    <!-- 标题 -->
+    <Label text="东软云医院HIS系统" textFill="#0066cc" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" GridPane.halignment="CENTER">
+        <font>
+            <Font name="Microsoft YaHei Bold" size="24.0" />
+        </font>
+    </Label>
+
+    <!-- 账号 -->
+    <Label text="账号:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <TextField fx:id="username" promptText="请输入医生编号/admin" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+    <!-- 密码 -->
+    <Label text="密码:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <PasswordField fx:id="password" promptText="请输入密码" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <!-- 登录按钮 -->
+    <Button fx:id="loginButton" text="登 录" onAction="#loginButtonOnClick"
+            prefWidth="200" style="-fx-background-color: #0066cc; -fx-text-fill: white;"
+            GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="3" GridPane.halignment="CENTER"/>
+
+</GridPane>

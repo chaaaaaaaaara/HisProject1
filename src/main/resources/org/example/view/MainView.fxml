@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controller.MainViewController"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <!-- 顶部菜单栏 -->
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu text="挂号收费">
+                    <items>
+                        <MenuItem fx:id="ghmenu" text="现场挂号" onAction="#addRegisterView"/>
+                        <MenuItem text="退出" />
+                    </items>
+                </Menu>
+                <Menu text="门诊医生">
+                    <items>
+                        <MenuItem fx:id="kzmenu" text="医生看诊" onAction="#addConsultationView"/>
+                    </items>
+                </Menu>
+                <Menu text="药房管理">
+                    <items>
+                        <MenuItem fx:id="yfmenu" text="药房发药" onAction="#addPharmacyView"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <!-- 中间内容区域 -->
+    <center>
+        <Label text="欢迎使用东软云医院HIS系统" style="-fx-font-size: 24px; -fx-text-fill: #999;" />
+    </center>
+
+</BorderPane>

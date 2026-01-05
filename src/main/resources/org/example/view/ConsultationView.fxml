@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controller.ConsultationViewController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <!-- 顶部查询栏 -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="病历号:" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="searchIdField" promptText="请输入病历号"/>
+        <Button text="查 询" onAction="#searchPatient" style="-fx-background-color: #0066cc; -fx-text-fill: white;"/>
+    </HBox>
+
+    <Separator/>
+
+    <!-- 患者基本信息 (只读) -->
+    <GridPane hgap="10" vgap="10">
+        <Label text="姓名:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="realname" editable="false" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="年龄:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <TextField fx:id="age" editable="false" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="性别:" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+        <TextField fx:id="gender" editable="false" GridPane.rowIndex="0" GridPane.columnIndex="5"/>
+
+        <Label text="看诊科室:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="deptName" editable="false" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="挂号级别:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <TextField fx:id="registLevel" editable="false" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <Label text="看诊时间:" GridPane.rowIndex="1" GridPane.columnIndex="4"/>
+        <TextField fx:id="registDate" editable="false" GridPane.rowIndex="1" GridPane.columnIndex="5"/>
+    </GridPane>
+
+    <Separator/>
+
+    <!-- 医生填写区域 -->
+    <Label text="医生诊断:" style="-fx-font-weight: bold;"/>
+    <TextArea fx:id="diagiosis" prefHeight="80" promptText="在此填写诊断结果..."/>
+
+    <Label text="开药处方:" style="-fx-font-weight: bold;"/>
+    <TextArea fx:id="prescription" prefHeight="80" promptText="在此填写药品及用法..."/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="药品总价(元):"/>
+        <TextField fx:id="drugPrice" promptText="0.00"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="保 存 诊 断" onAction="#saveConsultation" prefWidth="120" style="-fx-background-color: #28a745; -fx-text-fill: white;"/>
+    </HBox>
+
+</VBox>

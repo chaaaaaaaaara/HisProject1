@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controller.AddRegistViewController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <TitledPane text="患者信息" collapsible="false">
+        <GridPane hgap="10" vgap="10">
+            <Label text="病历号:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="id" editable="false" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="姓名:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+            <TextField fx:id="realname" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+            <Label text="性别:" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+            <HBox spacing="5" GridPane.rowIndex="0" GridPane.columnIndex="5">
+                <RadioButton fx:id="genderMan" text="男" selected="true"/>
+                <RadioButton fx:id="genderWoman" text="女"/>
+            </HBox>
+
+            <Label text="身份证号:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="cardnumber" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="年龄:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+            <TextField fx:id="age" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+            <Label text="家庭住址:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="homeAddress" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+        </GridPane>
+    </TitledPane>
+
+    <TitledPane text="挂号信息" collapsible="false">
+        <GridPane hgap="10" vgap="10">
+            <Label text="挂号科室:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="deptName" prefWidth="150" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="挂号级别:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+            <ComboBox fx:id="registLevel" prefWidth="150" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+            <Label text="看诊医生:" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+            <ComboBox fx:id="doctorName" prefWidth="150" GridPane.rowIndex="0" GridPane.columnIndex="5"/>
+
+            <CheckBox fx:id="isBook" text="需要病历本(+1元)" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+        </GridPane>
+    </TitledPane>
+
+    <HBox spacing="20" alignment="CENTER_LEFT">
+        <Label text="应收金额:" style="-fx-font-weight: bold;"/>
+        <Label fx:id="registfee" text="0.0" style="-fx-text-fill: red; -fx-font-size: 16px;"/>
+        <Button text="确 认 挂 号" onAction="#handleRegist" prefWidth="150" style="-fx-background-color: #0066cc; -fx-text-fill: white;"/>
+
+    </HBox>
+</VBox>

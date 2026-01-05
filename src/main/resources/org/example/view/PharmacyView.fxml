@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controller.PharmacyViewController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="病历号:" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="searchIdField" promptText="请输入病历号"/>
+        <Button text="查 询" onAction="#searchPatient" style="-fx-background-color: #0066cc; -fx-text-fill: white;"/>
+    </HBox>
+
+    <Separator/>
+
+    <Label text="药品处方明细:" style="-fx-font-weight: bold;"/>
+    <TextArea fx:id="prescriptionArea" editable="false" prefHeight="150" style="-fx-background-color: #f0f0f0;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="药品总价:"/>
+        <Label fx:id="priceLabel" text="0.00" style="-fx-font-size: 18px; -fx-text-fill: red; -fx-font-weight: bold;"/>
+        <Label text="元"/>
+    </HBox>
+
+    <HBox alignment="CENTER_RIGHT" spacing="20">
+        <Label fx:id="statusLabel" text="当前状态: 未知" style="-fx-text-fill: #666;"/>
+        <Button fx:id="dispenseBtn" text="确认发药" onAction="#handleDispense" disable="true"
+                prefWidth="150" prefHeight="40" style="-fx-background-color: #ff9900; -fx-text-fill: white;"/>
+    </HBox>
+
+</VBox>
